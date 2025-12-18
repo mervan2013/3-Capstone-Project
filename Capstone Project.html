@@ -1,243 +1,207 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Tesla - Electric vehicles and sustainable energy solutions">
-    <title>Tesla</title>
-    <link rel="stylesheet" href=
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tesla | Electric Future</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <style>
-      #fgfg{
-        text-align: center;
-        font-size: 3em;
-        margin: 20px 0;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        background: linear-gradient(45deg, #ff0000, #ff4500, #ff6347, #000000);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        letter-spacing: 2px;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-      }
-      #fgfg:hover {
-        transform: translateY(-5px);
-        color: #ff0000;      }
-      #fgf{
-        text-align: center;
-        font-size: 2em;
-        margin: 10px 0;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        background: linear-gradient(45deg, #cc0000, #333333);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        letter-spacing: 1px;
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
-      }
-      #fgf:hover {
-        transform: translateY(-3px);
-        color: #cc0000;
-      }
-      #tesla-title{
-        text-align: center;
-        font-weight: 500;
-        font-size: 2em;
-        letter-spacing: 1px;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-      }
-      #Carslah{
-        font-family: 'Times New Roman', Times, serif;
-        font-style: italic;
-        text-align: center;
-        font-size: 0.9em;
-        color: #666;
-        text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.05);
-      }
-      #d{
-        font-weight: 700;
-        text-align: center;
-        margin: 20px 0;
-        font-size: 1.8em;
-        transition: all 0.3s ease;
-        color: #ff0000;
-        letter-spacing: 1px;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-      }
-      #d:hover {
-        transform: scale(1.05);
-        color: #ff0000;
-      }
-      #f{
-        font-style: normal;
-        font-weight: 500;
-        text-align: center;
-        margin: 20px 0;
-        font-size: 1.3em;
-        line-height: 1.6;
-        transition: all 0.3s ease;
-        color: #333;
-        letter-spacing: 0.5px;
-      }
-      #f:hover {
-        background-color: #f0f0f0;
-        padding: 10px;
-        border-radius: 5px;
-      }
-      body{
 
-        background-color: #ffffff;
-        background-repeat: no-repeat;
-        background-size: cover;
-        margin: 0;
-        padding: 20px;
-            font-family: 'Roboto', Arial, Helvetica, sans-serif;
-            
-        }
-        .topnav {
-            overflow: hidden;
-            background-color: #ff0000;
-            display: flex;
-            align-items: center;
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            margin-right: 20px;
-        }
-        .logo svg {
-            width: 40px;
-            height: 40px;
-        }
-        .topnav a {
-            float: left;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-            transition: background-color 0.3s ease;
-        }
-        .topnav a:hover {
-            background-color: #cc0000;
-            color: white;
-        }
+<style>
+body{
+  margin:0;
+  font-family:'Roboto',Arial,sans-serif;
+  background:#fff;
+  color:#111;
+}
 
-        .topnav img {
-            filter: brightness(1.2) saturate(1.5);
-        }
+/* NAVBAR */
+.topnav{
+  background:#e50914;
+  display:flex;
+  align-items:center;
+  padding:12px 40px;
+  box-shadow:0 6px 20px rgba(0,0,0,.3);
+}
+.topnav a{
+  color:#fff;
+  margin-right:22px;
+  text-decoration:none;
+  font-weight:500;
+  transition:.3s;
+}
+.topnav a:hover{
+  background:#fff;
+  color:#000;
+  padding:8px 14px;
+  border-radius:6px;
+}
 
-        footer {
-            background-color: #f8f8f8;
-            padding: 40px 0;
-            margin-top: 40px;
-        }
+/* HERO CAROUSEL */
+.carousel-item img{
+  height:90vh;
+  object-fit:cover;
+}
+.carousel::after{
+  content:"";
+  position:absolute;
+  top:0;left:0;
+  width:100%;
+  height:100%;
+  background:linear-gradient(to bottom,rgba(0,0,0,.4),rgba(0,0,0,.8));
+  z-index:1;
+}
+.carousel-caption{
+  z-index:2;
+  bottom:30%;
+}
+.carousel-caption h5{
+  font-size:3.2rem;
+  font-weight:700;
+  letter-spacing:2px;
+}
 
-        .carousel {
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: box-shadow 0.3s ease;
-        }
-        .carousel:hover {
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
+/* HERO TEXT */
+.hero-text{
+  position:absolute;
+  top:65%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  text-align:center;
+  color:#fff;
+  z-index:3;
+}
+.hero-text h1{
+  font-size:4rem;
+  font-weight:700;
+  letter-spacing:3px;
+}
+.hero-text p{
+  font-size:1.3rem;
+  max-width:700px;
+  margin:20px auto;
+}
 
-        .carousel-caption h5 {
-            font-size: 2em;
-            font-weight: bold;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-        }
+/* SECTION */
+.section{
+  padding:90px 20px;
+  text-align:center;
+}
+.section h2{
+  font-size:2.8rem;
+  font-weight:700;
+  margin-bottom:20px;
+}
+.section p{
+  font-size:1.2rem;
+  max-width:900px;
+  margin:auto;
+  color:#555;
+}
 
-        .carousel-caption {
-            right: 10%;
-            left: auto;
-            text-align: right;
-        }
+/* FOOTER */
+footer{
+  background:#111;
+  color:#aaa;
+  padding:50px 20px;
+  text-align:center;
+}
+footer h3{
+  color:#e50914;
+  margin-top:25px;
+  font-weight:700;
+}
+footer p{
+  font-size:14px;
+  margin-top:15px;
+}
 
-        .carousel-item img {
-            height: 500px;
-            object-fit: cover;
-        }
+@media(max-width:768px){
+  .hero-text h1{font-size:2.6rem;}
+  .carousel-caption h5{font-size:2rem;}
+}
+</style>
+</head>
 
-    </style>
-  </head>
-  <body>
-    <div class="topnav">
-      <a href="Capstone Project.html"><img src="tesla2-removebg-preview.png" width="100px" height="60px"></a>
-        <a href="veichles.html">Models</a>
-        <a href="About.html">About</a>
-        <a href="Charging.html">Charging</a>
-        <a href="Discover.html">Discover</a>
-        <a href="Shop.html">Shop</a>
-        <a href="Account.html">Account</a>
+<body>
+
+<!-- NAV -->
+<div class="topnav">
+  <a href="Capstone Project.html">
+    <img src="tesla2-removebg-preview.png" width="100" height="60">
+  </a>
+  <a href="veichles.html">Models</a>
+  <a href="About.html">About</a>
+  <a href="Charging.html">Charging</a>
+  <a href="Discover.html">Discover</a>
+  <a href="Shop.html">Shop</a>
+  <a href="Account.html">Account</a>
+</div>
+
+<!-- HERO -->
+<div id="c" class="carousel slide" data-ride="carousel">
+
+  <ol class="carousel-indicators">
+    <li data-target="#c" data-slide-to="0" class="active"></li>
+    <li data-target="#c" data-slide-to="1"></li>
+    <li data-target="#c" data-slide-to="2"></li>
+    <li data-target="#c" data-slide-to="3"></li>
+  </ol>
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="carY.webp">
+      <div class="carousel-caption"><h5>Model Y</h5></div>
     </div>
-
-    <div class="container">
-      <h2 id="tesla-title">Tesla</h2>
-
-      <div id="c" class="carousel slide" data-ride="carousel">
-        
-        <ol class="carousel-indicators">
-          <li data-target="#c" data-slide-to="0" class="active"></li>
-          <li data-target="#c" data-slide-to="1"></li>
-          <li data-target="#c" data-slide-to="2"></li>
-          <li data-target="#c" data-slide-to="3"></li>
-        </ol>
-
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="carY.webp" alt="Model Y" class="d-block w-100">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Model Y</h5>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="car3.webp" alt="Model 3" class="d-block w-100">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Model 3</h5>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="carX.jpg" alt="Model X" class="d-block w-100">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Model X</h5>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="a.jpg" alt="Model S" class="d-block w-100">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Model S</h5>
-            </div>
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#c" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#c" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-      <h1 id="fgfg">Welcome to Tesla</h1>
-      <h2 id="fgf">Discover Our Current Models</h2>
+    <div class="carousel-item">
+      <img src="car3.webp">
+      <div class="carousel-caption"><h5>Model 3</h5></div>
     </div>
-    <footer>
-      <p id="f">At Tesla, we are dedicated to advancing renewable and reliable energy solutions. Our mission is to build a sustainable future that enhances the well-being of our planet. Explore our current lineup of models, available for lease, purchase, or financing.</p>
+    <div class="carousel-item">
+      <img src="carX.jpg">
+      <div class="carousel-caption"><h5>Model X</h5></div>
+    </div>
+    <div class="carousel-item">
+      <img src="a.jpg">
+      <div class="carousel-caption"><h5>Model S</h5></div>
+    </div>
+  </div>
 
-    
-    
-      <h3 id="d">Tesla 2025®</h3>
-    
-    
-      <p id="Carslah">© 2025 Tesla. All rights reserved. Tesla 2025® is not a registered trademark or benchmark. Tesla is not liable for any injuries sustained by the vehicle owner during operation.</p>
-    </footer>
-  </body>
+  <a class="carousel-control-prev" href="#c" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#c" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+  <div class="hero-text">
+    <h1>Welcome to Tesla</h1>
+    <p>Discover the future of electric mobility, performance, and sustainable innovation.</p>
+  </div>
+</div>
+
+<!-- SECTION -->
+<section class="section">
+  <h2>Discover Our Models</h2>
+  <p>
+    Tesla designs electric vehicles that combine performance, safety, and efficiency.
+    Explore our current lineup available for purchase, lease, or financing.
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <h3>Tesla 2025®</h3>
+  <p>
+    © 2025 Tesla. Educational project only.  
+    Not affiliated with Tesla, Inc.
+  </p>
+</footer>
+
+</body>
 </html>
