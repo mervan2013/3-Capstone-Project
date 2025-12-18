@@ -1,126 +1,197 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Tesla Models - Explore our electric vehicles">
-    <title>Tesla Models</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tesla Models | Electric Vehicles</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <style>
-      body{
-        background-color: #ffffff;
-        background-repeat: no-repeat;
-        background-size: cover;
-        margin: 0;
-        padding: 20px;
-            font-family: 'Roboto', Arial, Helvetica, sans-serif;
-            
-        }
-        .topnav {
-            overflow: hidden;
-            background-color: #ff0000;
-            display: flex;
-            align-items: center;
-        }
-        .topnav a {
-            float: left;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-            transition: background-color 0.3s ease;
-        }
-        .topnav a:hover {
-            background-color: #cc0000;
-            color: white;
-        }
 
-        footer {
-            background-color: #f8f8f8;
-            padding: 40px 0;
-            margin-top: 40px;
-        }
-        h1 {
-            text-align: center;
-            font-weight: 600;
-            font-size: 3em;
-            letter-spacing: 2px;
-            margin: 20px 0;
-        }
-        h2 {
-            font-weight: 500;
-            font-size: 2em;
-            margin: 20px 0 10px 0;
-        }
-        p {
-            font-size: 1.3em;
-            font-weight: 500;
-            line-height: 1.6;
-            margin: 10px 0;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-        }
-        section {
-            margin-bottom: 40px;
-        }
-    </style>
-  </head>
-  <body>
-    <div class="topnav">
-      <a href="Capstone Project.html"><img src="tesla2-removebg-preview.png" width="100px" height="60px"></a>
-        <a href="veichles.html">Models</a>
-        <a href="About.html">About</a>
-        <a href="Charging.html">Charging</a>
-        <a href="Discover.html">Discover</a>
-        <a href="Shop.html">Shop</a>
-        <a href="Account.html">Account</a>
-        <a href="Capstone Project.html">Home</a>
-    </div>
+<style>
+body{
+  margin:0;
+  font-family:'Roboto',Arial,sans-serif;
+  background:#fff;
+  color:#111;
+}
 
-    <div class="container">
-      <h1>Our Current Tesla Models</h1>
+/* NAVBAR */
+.topnav{
+  background:#e50914;
+  display:flex;
+  align-items:center;
+  padding:12px 40px;
+  box-shadow:0 6px 20px rgba(0,0,0,.3);
+}
+.topnav a{
+  color:#fff;
+  margin-right:22px;
+  text-decoration:none;
+  font-weight:500;
+  transition:.3s;
+}
+.topnav a:hover{
+  background:#fff;
+  color:#000;
+  padding:8px 14px;
+  border-radius:6px;
+}
 
-      <section>
-        <h2>Model X</h2>
-        <img src="carX.jpg" alt="Tesla Model X">
-        <p>The Model X is built for power and luxury, with rapid acceleration, a refined interior, and a sleek aesthetic.</p>
-        <p><strong>Starting at:</strong> $120,990</p>
-      </section>
+/* HERO */
+.hero{
+  height:60vh;
+  background:linear-gradient(to right,rgba(0,0,0,.7),rgba(0,0,0,.7)),
+  url("carY.webp") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+}
+.hero h1{
+  font-size:3.5rem;
+  font-weight:700;
+  letter-spacing:3px;
+}
 
-      <section>
-        <h2>Model Y</h2>
-        <img src="carY.webp" alt="Tesla Model Y">
-        <p>The Model Y is designed for versatility and safety, with ample cargo space and strong performance.</p>
-        <p><strong>Starting at:</strong> $65,990</p>
-      </section>
+/* SECTION */
+.section{
+  padding:80px 20px;
+}
 
-      <section>
-        <h2>Model 3</h2>
-        <img src="car3.webp" alt="Tesla Model 3">
-        <p>The Model 3 focuses on efficiency and affordability, with a minimalist design and long range.</p>
-        <p><strong>Starting at:</strong> $48,990</p>
-      </section>
+/* MODEL CARD */
+.model-card{
+  background:#fff;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+  transition:.4s;
+  height:100%;
+}
+.model-card:hover{
+  transform:translateY(-10px);
+}
+.model-card img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+}
+.model-card-body{
+  padding:30px;
+  text-align:center;
+}
+.model-card-body h3{
+  font-weight:700;
+  margin-bottom:15px;
+}
+.model-card-body p{
+  color:#555;
+  font-size:1.1rem;
+}
+.price{
+  font-weight:700;
+  color:#e50914;
+  font-size:1.2rem;
+  margin-top:15px;
+}
 
-      <section>
-        <h2>Model S</h2>
-        <img src="images.jpg" alt="Tesla Model S">
-        <p>The Model S delivers high performance and luxury, with exceptional speed and advanced features.</p>
-        <p><strong>Starting at:</strong> $89,990</p>
-      </section>
-    </div>
-    <footer>
-      <div class="container">
-        <p>© 2025 Tesla. All rights reserved. Tesla 2025® is not a registered trademark or benchmark. Tesla is not liable for any injuries sustained by the vehicle owner during operation.</p>
+/* FOOTER */
+footer{
+  background:#111;
+  color:#aaa;
+  padding:50px 20px;
+  text-align:center;
+  font-size:14px;
+}
+
+@media(max-width:768px){
+  .hero h1{font-size:2.4rem;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="topnav">
+  <a href="Capstone Project.html">
+    <img src="tesla2-removebg-preview.png" width="100" height="60">
+  </a>
+  <a href="veichles.html">Models</a>
+  <a href="About.html">About</a>
+  <a href="Charging.html">Charging</a>
+  <a href="Discover.html">Discover</a>
+  <a href="Shop.html">Shop</a>
+  <a href="Account.html">Account</a>
+  <a href="Capstone Project.html">Home</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Explore Our Models</h1>
+</section>
+
+<!-- MODELS -->
+<section class="section container">
+  <div class="row">
+
+    <div class="col-md-6 col-lg-3 mb-4">
+      <div class="model-card">
+        <img src="carX.jpg">
+        <div class="model-card-body">
+          <h3>Model X</h3>
+          <p>Luxury SUV with unmatched performance and advanced technology.</p>
+          <div class="price">Starting at $120,990</div>
+        </div>
       </div>
-    </footer>
-  </body>
+    </div>
+
+    <div class="col-md-6 col-lg-3 mb-4">
+      <div class="model-card">
+        <img src="carY.webp">
+        <div class="model-card-body">
+          <h3>Model Y</h3>
+          <p>Versatile, efficient, and built for safety and comfort.</p>
+          <div class="price">Starting at $65,990</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3 mb-4">
+      <div class="model-card">
+        <img src="car3.webp">
+        <div class="model-card-body">
+          <h3>Model 3</h3>
+          <p>Affordable electric sedan with long range and sleek design.</p>
+          <div class="price">Starting at $48,990</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3 mb-4">
+      <div class="model-card">
+        <img src="images.jpg">
+        <div class="model-card-body">
+          <h3>Model S</h3>
+          <p>High-performance sedan with exceptional speed and luxury.</p>
+          <div class="price">Starting at $89,990</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2025 Tesla. Educational project only.  
+  Not affiliated with Tesla, Inc.
+</footer>
+
+</body>
 </html>
