@@ -1,94 +1,218 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Tesla Shop - Purchase Tesla merchandise and accessories">
-    <title>Tesla Shop</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tesla Shop | Official Merchandise</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <style>
-      body{
-        background-color: #ffffff;
-        background-repeat: no-repeat;
-        background-size: cover;
-        margin: 0;
-        padding: 20px;
-            font-family: 'Roboto', Arial, Helvetica, sans-serif;
-            
-        }
-        .topnav {
-            overflow: hidden;
-            background-color: #ff0000;
-            display: flex;
-            align-items: center;
-        }
-        .topnav a {
-            float: left;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-            transition: background-color 0.3s ease;
-        }
-        .topnav a:hover {
-            background-color: #cc0000;
-            color: white;
-        }
 
-        footer {
-            background-color: #f8f8f8;
-            padding: 40px 0;
-            margin-top: 40px;
-        }
-        h1 {
-            text-align: center;
-            font-weight: 600;
-            font-size: 3em;
-            letter-spacing: 2px;
-            margin: 20px 0;
-        }
-        p {
-            text-align: center;
-            font-size: 1.3em;
-            font-weight: 500;
-            line-height: 1.6;
-            margin: 20px 0;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-        }
-    </style>
-  </head>
-  <body>
-    <div class="topnav">
-      <a href="Capstone Project.html"><img src="tesla2-removebg-preview.png" width="100px" height="60px"></a>
-        <a href="veichles.html">Models</a>
-        <a href="About.html">About</a>
-        <a href="Charging.html">Charging</a>
-        <a href="Discover.html">Discover</a>
-        <a href="Shop.html">Shop</a>
-        <a href="Account.html">Account</a>
-        <a href="Capstone Project.html">Home</a>
-    </div>
+<style>
+body{
+  margin:0;
+  font-family:'Roboto',Arial,sans-serif;
+  background:#fff;
+  color:#111;
+}
 
-    <div class="container">
-      <h1>Tesla Shop</h1>
-      <p>Explore our range of Tesla merchandise, accessories, and lifestyle products.</p>
-      <p>From apparel to home goods, find everything you need to show your Tesla pride.</p>
-      <img src="Tesla Model 3 facelift 1_awovfc.webp" alt="Tesla Model 3">
-    </div>
-    <footer>
-      <div class="container">
-        <p>© 2025 Tesla. All rights reserved. Tesla 2025® is not a registered trademark or benchmark. Tesla is not liable for any injuries sustained by the vehicle owner during operation.</p>
+/* NAV */
+.topnav{
+  background:#e50914;
+  display:flex;
+  align-items:center;
+  padding:12px 40px;
+  box-shadow:0 6px 20px rgba(0,0,0,.3);
+}
+.topnav a{
+  color:#fff;
+  margin-right:22px;
+  text-decoration:none;
+  font-weight:500;
+  transition:.3s;
+}
+.topnav a:hover{
+  background:#fff;
+  color:#000;
+  padding:8px 14px;
+  border-radius:6px;
+}
+
+/* HERO */
+.hero{
+  height:55vh;
+  background:linear-gradient(to right,rgba(0,0,0,.7),rgba(0,0,0,.7)),
+  url("Tesla Model 3 facelift 1_awovfc.webp") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+}
+.hero h1{
+  font-size:3.5rem;
+  font-weight:700;
+  letter-spacing:3px;
+}
+
+/* SECTION */
+.section{
+  padding:80px 20px;
+  text-align:center;
+}
+.section p{
+  font-size:1.2rem;
+  color:#555;
+  margin-bottom:50px;
+}
+
+/* PRODUCT CARD */
+.product-card{
+  background:#fff;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+  transition:.4s;
+  height:100%;
+}
+.product-card:hover{
+  transform:translateY(-10px);
+}
+.product-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+.product-body{
+  padding:25px;
+}
+.product-body h4{
+  font-weight:700;
+}
+.product-body p{
+  font-size:1rem;
+  color:#555;
+}
+.price{
+  color:#e50914;
+  font-weight:700;
+  font-size:1.2rem;
+  margin:10px 0;
+}
+.buy-btn{
+  background:#111;
+  color:#fff;
+  border:none;
+  padding:10px 25px;
+  border-radius:25px;
+  transition:.3s;
+}
+.buy-btn:hover{
+  background:#e50914;
+}
+
+/* FOOTER */
+footer{
+  background:#111;
+  color:#aaa;
+  padding:50px 20px;
+  text-align:center;
+  font-size:14px;
+}
+
+@media(max-width:768px){
+  .hero h1{font-size:2.3rem;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="topnav">
+  <a href="Capstone Project.html">
+    <img src="tesla2-removebg-preview.png" width="100" height="60">
+  </a>
+  <a href="veichles.html">Models</a>
+  <a href="About.html">About</a>
+  <a href="Charging.html">Charging</a>
+  <a href="Discover.html">Discover</a>
+  <a href="Shop.html">Shop</a>
+  <a href="Account.html">Account</a>
+  <a href="Capstone Project.html">Home</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Tesla Shop</h1>
+</section>
+
+<!-- SHOP -->
+<section class="section container">
+  <p>Explore premium Tesla merchandise, accessories, and lifestyle products.</p>
+
+  <div class="row">
+
+    <div class="col-md-6 col-lg-3 mb-4">
+      <div class="product-card">
+        <img src="hoodie.jpg">
+        <div class="product-body">
+          <h4>Tesla Hoodie</h4>
+          <p>Comfortable premium hoodie with Tesla branding.</p>
+          <div class="price">$79</div>
+          <button class="buy-btn">Buy Now</button>
+        </div>
       </div>
-    </footer>
-  </body>
+    </div>
+
+    <div class="col-md-6 col-lg-3 mb-4">
+      <div class="product-card">
+        <img src="cap.jpg">
+        <div class="product-body">
+          <h4>Tesla Cap</h4>
+          <p>Minimalist cap designed for Tesla enthusiasts.</p>
+          <div class="price">$35</div>
+          <button class="buy-btn">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3 mb-4">
+      <div class="product-card">
+        <img src="charger.webp">
+        <div class="product-body">
+          <h4>Home Charger</h4>
+          <p>Fast and reliable Tesla home charging solution.</p>
+          <div class="price">$475</div>
+          <button class="buy-btn">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3 mb-4">
+      <div class="product-card">
+        <img src="mug.jpg">
+        <div class="product-body">
+          <h4>Tesla Mug</h4>
+          <p>Sleek mug for home or office use.</p>
+          <div class="price">$25</div>
+          <button class="buy-btn">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2025 Tesla. Educational project only.  
+  Not affiliated with Tesla, Inc.
+</footer>
+
+</body>
 </html>
