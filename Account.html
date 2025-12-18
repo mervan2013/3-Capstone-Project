@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Tesla Account - Manage your Tesla account">
+    <title>Tesla Account</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+      body{
+        background-color: #ffffff;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        padding: 20px;
+            font-family: 'Roboto', Arial, Helvetica, sans-serif;
+            
+        }
+        .topnav {
+            overflow: hidden;
+            background-color: #ff0000;
+            display: flex;
+            align-items: center;
+        }
+        .topnav a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            transition: background-color 0.3s ease;
+        }
+        .topnav a:hover {
+            background-color: #cc0000;
+            color: white;
+        }
+
+        footer {
+            background-color: #f8f8f8;
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+        h1 {
+            text-align: center;
+            font-weight: 600;
+            font-size: 3em;
+            letter-spacing: 2px;
+            margin: 20px 0;
+        }
+        p {
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: 500;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #cc0000;
+        }
+        #dashboard {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        #dashboard button {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        #dashboard button:hover {
+            background-color: #cc0000;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="topnav">
+      <a href="Capstone Project.html"><img src="tesla2-removebg-preview.png" width="100px" height="60px"></a>
+        <a href="veichles.html">Models</a>
+        <a href="About.html">About</a>
+        <a href="Charging.html">Charging</a>
+        <a href="Discover.html">Discover</a>
+        <a href="Shop.html">Shop</a>
+        <a href="Account.html">Account</a>
+        <a href="Capstone Project.html">Home</a>
+    </div>
+
+    <div class="container">
+      <h1>Welcome to Your Tesla Account</h1>
+      <div id="loginSection">
+        <p>Please sign in to access your account.</p>
+        <form id="loginForm" onsubmit="login(event)">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+          <button type="submit">Sign In</button>
+        </form>
+        <p><a href="#" onclick="showRegister()">Don't have an account? Register here.</a></p>
+      </div>
+      <div id="registerSection" style="display: none;">
+        <p>Create a new account.</p>
+        <form id="registerForm" onsubmit="register(event)">
+          <label for="regEmail">Email:</label>
+          <input type="email" id="regEmail" name="regEmail" required>
+          <label for="regPassword">Password:</label>
+          <input type="password" id="regPassword" name="regPassword" required>
+          <label for="confirmPassword">Confirm Password:</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" required>
+          <button type="submit">Register</button>
+        </form>
+        <p><a href="#" onclick="showLogin()">Already have an account? Sign in here.</a></p>
+      </div>
+      <div id="dashboard" style="display: none;">
+        <h2>Account Dashboard</h2>
+        <p>Welcome, <span id="userEmail"></span>!</p>
+        <p>Your Tesla account is active. Here you can manage your vehicles, view orders, and more.</p>
+        <button onclick="logout()">Logout</button>
+      </div>
+      <p>If you have any concerns, please contact us at 1-800-TESLA-1</p>
+    </div>
+    <footer>
+      <div class="container">
+        <p>© 2025 Tesla. All rights reserved. Tesla 2025® is not a registered trademark or benchmark. Tesla is not liable for any injuries sustained by the vehicle owner during operation.</p>
+      </div>
+    </footer>
+    <script>
+      window.onload = function() {
+        if (localStorage.getItem('loggedIn') === 'true') {
+          showDashboard();
+        } else {
+          showLogin();
+        }
+      };
+
+      function login(event) {
+        event.preventDefault();
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        var users = JSON.parse(localStorage.getItem('users')) || {};
+        if (users[email] && users[email] === password) {
+          localStorage.setItem('loggedIn', 'true');
+          localStorage.setItem('currentUser', email);
+          showDashboard();
+        } else {
+          alert('Invalid email or password.');
+        }
+      }
+
+      function register(event) {
+        event.preventDefault();
+        var email = document.getElementById('regEmail').value;
+        var password = document.getElementById('regPassword').value;
+        var confirmPassword = document.getElementById('confirmPassword').value;
+        if (password !== confirmPassword) {
+          alert('Passwords do not match.');
+          return;
+        }
+        var users = JSON.parse(localStorage.getItem('users')) || {};
+        if (users[email]) {
+          alert('User already exists.');
+          return;
+        }
+        users[email] = password;
+        localStorage.setItem('users', JSON.stringify(users));
+        alert('Registration successful! Please sign in.');
+        showLogin();
+      }
+
+      function logout() {
+        localStorage.removeItem('loggedIn');
+        localStorage.removeItem('currentUser');
+        showLogin();
+      }
+
+      function showLogin() {
+        document.getElementById('loginSection').style.display = 'block';
+        document.getElementById('registerSection').style.display = 'none';
+        document.getElementById('dashboard').style.display = 'none';
+      }
+
+      function showRegister() {
+        document.getElementById('loginSection').style.display = 'none';
+        document.getElementById('registerSection').style.display = 'block';
+        document.getElementById('dashboard').style.display = 'none';
+      }
+
+      function showDashboard() {
+        document.getElementById('loginSection').style.display = 'none';
+        document.getElementById('registerSection').style.display = 'none';
+        document.getElementById('dashboard').style.display = 'block';
+        var user = localStorage.getItem('currentUser');
+        document.getElementById('userEmail').textContent = user;
+      }
+    </script>
+  </body>
+</html>
