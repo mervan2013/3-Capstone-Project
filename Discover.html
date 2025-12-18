@@ -1,88 +1,192 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Discover Tesla - Explore sustainable energy solutions">
-    <title>Discover Tesla</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <style>
-      body{
-        background-color: #ffffff;
-        background-repeat: no-repeat;
-        background-size: cover;
-        margin: 0;
-        padding: 20px;
-            font-family: 'Roboto', Arial, Helvetica, sans-serif;
-            
-        }
-        .topnav {
-            overflow: hidden;
-            background-color: #ff0000;
-            display: flex;
-            align-items: center;
-        }
-        .topnav a {
-            float: left;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-            transition: background-color 0.3s ease;
-        }
-        .topnav a:hover {
-            background-color: #cc0000;
-            color: white;
-        }
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Discover Tesla - Explore sustainable energy solutions">
+  <title>Discover Tesla</title>
 
-        footer {
-            background-color: #f8f8f8;
-            padding: 40px 0;
-            margin-top: 40px;
-        }
-        h1 {
-            text-align: center;
-            font-weight: 600;
-            font-size: 3em;
-            letter-spacing: 2px;
-            margin: 20px 0;
-        }
-        p {
-            text-align: center;
-            font-size: 1.3em;
-            font-weight: 500;
-            line-height: 1.6;
-            margin: 20px 0;
-        }
-    </style>
-  </head>
-  <body>
-    <div class="topnav">
-      <a href="Capstone Project.html"><img src="tesla2-removebg-preview.png" width="100px" height="60px"></a>
-        <a href="veichles.html">Models</a>
-        <a href="About.html">About</a>
-        <a href="Charging.html">Charging</a>
-        <a href="Discover.html">Discover</a>
-        <a href="Shop.html">Shop</a>
-        <a href="Account.html">Account</a>
-        <a href="Capstone Project.html">Home</a>
-    </div>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-    <div class="container">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      background-color: #ffffff;
+      color: #111;
+    }
+
+    /* NAVBAR */
+    .topnav {
+      display: flex;
+      align-items: center;
+      background-color: #e10600;
+      padding: 0 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .topnav a {
+      color: white;
+      padding: 16px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .topnav a:hover {
+      background-color: #b80000;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(
+        rgba(0,0,0,0.65),
+        rgba(0,0,0,0.65)
+      ),
+      url('mapp.png') center/cover no-repeat;
+      height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 40px;
+    }
+
+    .hero h1 {
+      font-size: 4em;
+      font-weight: 700;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.5em;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    /* CONTENT SECTION */
+    .content {
+      padding: 80px 20px;
+    }
+
+    .content-card {
+      background: #f9f9f9;
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .content-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .content-card h2 {
+      font-size: 2.5em;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #e10600;
+    }
+
+    .content-card p {
+      font-size: 1.3em;
+      line-height: 1.7;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #f2f2f2;
+      padding: 40px 0;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    footer p {
+      font-size: 0.95em;
+      color: #555;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.8em;
+      }
+      .hero p {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <div class="topnav">
+    <a href="Capstone Project.html">
+      <img src="tesla2-removebg-preview.png" width="100" height="60">
+    </a>
+    <a href="veichles.html">Models</a>
+    <a href="About.html">About</a>
+    <a href="Charging.html">Charging</a>
+    <a href="Discover.html">Discover</a>
+    <a href="Shop.html">Shop</a>
+    <a href="Account.html">Account</a>
+    <a href="Capstone Project.html">Home</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
       <h1>Discover Tesla</h1>
-      <p>This page is designed for exploring ideas in sustainable ways.</p>
-      <p>In reality, people often misuse natural resources, leading to increased CO2 emissions.</p>
-      <p>Tesla is sustainable and budget-friendly, so while helping the environment, you are also helping your wallet.</p>
+      <p>Driving innovation through sustainability, technology, and a cleaner future.</p>
     </div>
-    <footer>
-      <div class="container">
-        <p>© 2025 Tesla. All rights reserved. Tesla 2025® is not a registered trademark or benchmark. Tesla is not liable for any injuries sustained by the vehicle owner during operation.</p>
-      </div>
-    </footer>
-  </body>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="content container">
+    <div class="content-card">
+      <h2>Sustainable Innovation</h2>
+      <p>
+        This page is dedicated to exploring ideas that lead to a more sustainable world.
+        While many industries continue to rely heavily on fossil fuels, Tesla challenges
+        the status quo with clean, renewable solutions.
+      </p>
+      <p>
+        By reducing CO₂ emissions and promoting electric mobility, Tesla helps protect
+        our planet while delivering cutting-edge performance and affordability.
+      </p>
+      <p>
+        Choosing Tesla means investing in a future that benefits both the environment
+        and your wallet.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © 2025 Tesla. All rights reserved. Tesla 2025® is not a registered trademark or benchmark.
+      Tesla is not liable for any injuries sustained by the vehicle owner during operation.
+    </p>
+  </footer>
+
+</body>
 </html>
