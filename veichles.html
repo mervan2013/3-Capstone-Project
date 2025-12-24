@@ -5,8 +5,11 @@
 <title>Tesla Models | Electric Vehicles</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- Bootstrap -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -20,29 +23,68 @@ body{
   color:#111;
 }
 
-/* NAVBAR */
-.topnav{
-  background:#e50914;
+/* ===== NAVIGATION ===== */
+.tesla-nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(0,0,0,.08);
+}
+.nav-inner{
+  max-width:1400px;
+  margin:auto;
+  padding:12px 30px;
   display:flex;
   align-items:center;
-  padding:12px 40px;
-  box-shadow:0 6px 20px rgba(0,0,0,.3);
+  justify-content:space-between;
 }
-.topnav a{
-  color:#fff;
-  margin-right:22px;
+.nav-logo img{
+  height:42px;
+}
+.nav-links{
+  display:flex;
+  gap:30px;
+}
+.nav-links a{
+  color:#111;
   text-decoration:none;
+  font-size:15px;
   font-weight:500;
+  position:relative;
+}
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:#e10600;
   transition:.3s;
 }
-.topnav a:hover{
-  background:#fff;
-  color:#000;
-  padding:8px 14px;
-  border-radius:6px;
+.nav-links a:hover{
+  color:#e10600;
+}
+.nav-links a:hover::after{
+  width:100%;
+}
+.account-btn{
+  background:#e10600;
+  color:#fff;
+  padding:8px 18px;
+  border-radius:25px;
+  text-decoration:none;
+  font-size:14px;
+  transition:.3s;
+}
+.account-btn:hover{
+  background:#b80000;
+  transform:translateY(-2px);
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero{
   height:60vh;
   background:linear-gradient(to right,rgba(0,0,0,.7),rgba(0,0,0,.7)),
@@ -59,12 +101,12 @@ body{
   letter-spacing:3px;
 }
 
-/* SECTION */
+/* ===== SECTION ===== */
 .section{
   padding:80px 20px;
 }
 
-/* MODEL CARD */
+/* ===== MODEL CARD ===== */
 .model-card{
   background:#fff;
   border-radius:20px;
@@ -95,12 +137,25 @@ body{
 }
 .price{
   font-weight:700;
-  color:#e50914;
+  color:#e10600;
   font-size:1.2rem;
   margin-top:15px;
 }
+.details-btn{
+  background:#111;
+  color:#fff;
+  border:none;
+  padding:10px 25px;
+  border-radius:25px;
+  margin-top:10px;
+  transition:.3s;
+}
+.details-btn:hover{
+  background:#e10600;
+  transform:translateY(-2px);
+}
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer{
   background:#111;
   color:#aaa;
@@ -111,25 +166,29 @@ footer{
 
 @media(max-width:768px){
   .hero h1{font-size:2.4rem;}
+  .nav-links{display:none;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<div class="topnav">
-  <a href="Capstone Project.html">
-    <img src="tesla2-removebg-preview.png" width="100" height="60">
-  </a>
-  <a href="veichles.html">Models</a>
-  <a href="About.html">About</a>
-  <a href="Charging.html">Charging</a>
-  <a href="Discover.html">Discover</a>
-  <a href="Shop.html">Shop</a>
-  <a href="Account.html">Account</a>
-  <a href="Capstone Project.html">Home</a>
-</div>
+<!-- NAVIGATION -->
+<header class="tesla-nav">
+  <div class="nav-inner">
+    <a href="Capstone Project.html" class="nav-logo">
+      <img src="tesla2-removebg-preview.png">
+    </a>
+    <nav class="nav-links">
+      <a href="veichles.html">Models</a>
+      <a href="About.html">About</a>
+      <a href="Charging.html">Charging</a>
+      <a href="Discover.html">Discover</a>
+      <a href="Shop.html">Shop</a>
+    </nav>
+    <a href="Account.html" class="account-btn">Account</a>
+  </div>
+</header>
 
 <!-- HERO -->
 <section class="hero">
@@ -142,44 +201,48 @@ footer{
 
     <div class="col-md-6 col-lg-3 mb-4">
       <div class="model-card">
-        <img src="carX.jpg">
+        <img src="carX.jpg" alt="Model X">
         <div class="model-card-body">
           <h3>Model X</h3>
           <p>Luxury SUV with unmatched performance and advanced technology.</p>
           <div class="price">Starting at $120,990</div>
+          <button class="details-btn">View Details</button>
         </div>
       </div>
     </div>
 
     <div class="col-md-6 col-lg-3 mb-4">
       <div class="model-card">
-        <img src="carY.webp">
+        <img src="carY.webp" alt="Model Y">
         <div class="model-card-body">
           <h3>Model Y</h3>
           <p>Versatile, efficient, and built for safety and comfort.</p>
           <div class="price">Starting at $65,990</div>
+          <button class="details-btn">View Details</button>
         </div>
       </div>
     </div>
 
     <div class="col-md-6 col-lg-3 mb-4">
       <div class="model-card">
-        <img src="car3.webp">
+        <img src="car3.webp" alt="Model 3">
         <div class="model-card-body">
           <h3>Model 3</h3>
           <p>Affordable electric sedan with long range and sleek design.</p>
           <div class="price">Starting at $48,990</div>
+          <button class="details-btn">View Details</button>
         </div>
       </div>
     </div>
 
     <div class="col-md-6 col-lg-3 mb-4">
       <div class="model-card">
-        <img src="images.jpg">
+        <img src="images.jpg" alt="Model S">
         <div class="model-card-body">
           <h3>Model S</h3>
           <p>High-performance sedan with exceptional speed and luxury.</p>
           <div class="price">Starting at $89,990</div>
+          <button class="details-btn">View Details</button>
         </div>
       </div>
     </div>
@@ -189,8 +252,7 @@ footer{
 
 <!-- FOOTER -->
 <footer>
-  © 2025 Tesla. Educational project only.  
-  Not affiliated with Tesla, Inc.
+  © 2025 Tesla. Educational project only. Not affiliated with Tesla, Inc.
 </footer>
 
 </body>
