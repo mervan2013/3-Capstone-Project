@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <!-- Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -22,49 +22,108 @@
       font-family: 'Roboto', Arial, sans-serif;
       background-color: #ffffff;
       margin: 0;
-      padding: 0;
-      color: #333;
+      color: #111;
     }
 
-    /* NAVBAR */
-    .topnav {
-      background-color: #e50914;
+    /* ===== TESLA NAVBAR ===== */
+    .tesla-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+    }
+
+    .nav-inner {
+      max-width: 1400px;
+      margin: auto;
+      padding: 12px 30px;
       display: flex;
       align-items: center;
-      padding: 10px 30px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      justify-content: space-between;
     }
 
-    .topnav a {
-      color: #fff;
-      margin-right: 20px;
+    .nav-logo img {
+      height: 42px;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-logo:hover img {
+      transform: scale(1.05);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      position: relative;
       text-decoration: none;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 500;
-      transition: 0.3s ease;
+      color: #111;
+      letter-spacing: 0.5px;
+      padding: 6px 0;
+      transition: color 0.3s ease;
     }
 
-    .topnav a:hover {
-      color: #000;
-      background-color: #fff;
-      padding: 8px 14px;
-      border-radius: 5px;
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0%;
+      height: 2px;
+      background: #e10600;
+      transition: width 0.3s ease;
     }
 
-    .topnav img {
-      margin-right: 25px;
+    .nav-links a:hover {
+      color: #e10600;
     }
 
-    /* HERO SECTION */
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .account-btn {
+      padding: 8px 18px;
+      border-radius: 25px;
+      background: #e10600;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .account-btn:hover {
+      background: #b80000;
+      transform: translateY(-2px);
+      color: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+    }
+
+    /* ===== HERO ===== */
     .hero {
-      background: linear-gradient(to right, #000000cc, #000000cc),
-      url("images (1).jpg") center/cover no-repeat;
       height: 75vh;
+      background: linear-gradient(
+        rgba(0,0,0,0.6),
+        rgba(0,0,0,0.6)
+      ), url("images (1).jpg") center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: #fff;
+      color: white;
       padding: 20px;
     }
 
@@ -72,82 +131,81 @@
       font-size: 3.5rem;
       font-weight: 700;
       letter-spacing: 2px;
+      margin-bottom: 15px;
     }
 
     .hero p {
       font-size: 1.3rem;
-      max-width: 800px;
-      margin: 20px auto;
+      max-width: 850px;
+      margin: auto;
     }
 
-    /* CONTENT SECTION */
+    /* ===== CONTENT ===== */
     .content-section {
-      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
+      padding: 90px 20px;
     }
 
     .content-card {
-      background-color: #f9f9f9;
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      margin-bottom: 40px;
+      background: #f9f9f9;
+      padding: 45px;
+      border-radius: 18px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+      margin-bottom: 50px;
       transition: transform 0.3s ease;
+      text-align: center;
     }
 
     .content-card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-10px);
     }
 
     .content-card h2 {
+      font-size: 2.2rem;
       font-weight: 700;
       margin-bottom: 20px;
-      text-align: center;
     }
 
     .content-card p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      text-align: center;
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: #444;
     }
 
-    /* VIDEO SECTION */
+    /* ===== VIDEO ===== */
     .video-section {
-      background-color: #000;
-      padding: 70px 20px;
-      color: #fff;
+      background: #000;
+      padding: 80px 20px;
+      color: white;
       text-align: center;
     }
 
     .video-section h1 {
-      margin-bottom: 40px;
       font-weight: 700;
+      margin-bottom: 40px;
       letter-spacing: 1px;
     }
 
     video {
       width: 85%;
-      max-width: 900px;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(255,255,255,0.2);
+      max-width: 950px;
+      border-radius: 18px;
+      box-shadow: 0 15px 40px rgba(255,255,255,0.15);
     }
 
-    /* FOOTER */
+    /* ===== FOOTER ===== */
     footer {
-      background-color: #111;
+      background: #111;
       color: #aaa;
       padding: 40px 20px;
       text-align: center;
       font-size: 14px;
     }
 
-    footer p {
-      margin: 0;
-    }
-
-    /* RESPONSIVE */
     @media (max-width: 768px) {
       .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.6rem;
       }
 
       video {
@@ -159,70 +217,16 @@
 
 <body>
 
-  <!-- NAVBAR -->
-  <div class="topnav">
-    <a href="Capstone Project.html">
-      <img src="tesla2-removebg-preview.png" width="100" height="60">
+<!-- NAV -->
+<header class="tesla-nav">
+  <div class="nav-inner">
+    <a href="Capstone Project.html" class="nav-logo">
+      <img src="tesla2-removebg-preview.png" alt="Tesla Logo">
     </a>
-    <a href="veichles.html">Models</a>
-    <a href="About.html">About</a>
-    <a href="Charging.html">Charging</a>
-    <a href="Discover.html">Discover</a>
-    <a href="Shop.html">Shop</a>
-    <a href="Account.html">Account</a>
-    <a href="Capstone Project.html">Home</a>
-  </div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div>
-      <h1>About Tesla, Inc.</h1>
-      <p>Accelerating the world’s transition to sustainable energy through innovation, performance, and clean technology.</p>
-    </div>
-  </section>
-
-  <!-- CONTENT -->
-  <section class="content-section container">
-
-    <div class="content-card">
-      <h2>Who We Are</h2>
-      <p>
-        Tesla, Inc. is an American electric vehicle and clean energy company founded in 2003.
-        Tesla designs and manufactures electric vehicles, battery energy storage systems,
-        and solar products with the mission to create a sustainable future.
-      </p>
-    </div>
-
-    <div class="content-card">
-      <h2>Our Products</h2>
-      <p>
-        Tesla’s lineup includes Model S, Model 3, Model X, Model Y, Cybertruck, and Roadster.
-        Beyond vehicles, Tesla develops Powerwall, Powerpack, Megapack,
-        solar panels, and Solar Roof solutions.
-      </p>
-    </div>
-
-    <div class="content-card">
-      <h2>Innovation & Sustainability</h2>
-      <p>
-        Tesla continues to redefine transportation with cutting-edge performance,
-        long-range capabilities, autonomous driving technology,
-        and a global Supercharger network.
-      </p>
-    </div>
-
-  </section>
-
-  <!-- VIDEO -->
-  <section class="video-section">
-    <h1>How We Designed the New Model Y</h1>
-    <video src="Designing The New Model Y  Tesla.mp4" controls></video>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Tesla. All rights reserved. This project is for educational purposes only.</p>
-  </footer>
-
-</body>
-</html>
+    <nav class="nav-links">
+      <a href="veichles.html">Models</a>
+      <a href="About.html">About</a>
+      <a href="Charging.html">Charging</a>
+      <a href="Discover.html">Discover</a>
+      <a
